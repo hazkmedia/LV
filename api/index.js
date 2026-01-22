@@ -1,28 +1,38 @@
-export default function handler(req, res) {
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
+module.exports = function handler(req, res) {
+  res.writeHead(200, {
+    "Content-Type": "text/html; charset=utf-8"
+  });
 
-  res.status(200).send(`<!DOCTYPE html>
-<html lang="en">
+  res.end(`<!DOCTYPE html>
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers at Louis Vuitton</title>
+
 <style>
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100vh;
+  border: none;
+  display: block;
 }
 </style>
 </head>
+
 <body>
-<iframe src="https://blackdognewmedia.co.uk"></iframe>
+<iframe
+  src="https://blackdognewmedia.co.uk"
+  loading="lazy"
+  referrerpolicy="no-referrer"
+  allowfullscreen>
+</iframe>
 </body>
 </html>`);
-}
+};
